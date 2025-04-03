@@ -6,7 +6,7 @@ const path = require('path');
 const app = express();
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));;
 
 mongoose.connect('mongodb+srv://nilspoznaks:masterroub123@cluster0.rklpcmh.mongodb.net/todoDB?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
@@ -16,7 +16,7 @@ mongoose.connect('mongodb+srv://nilspoznaks:masterroub123@cluster0.rklpcmh.mongo
 const taskRoutes = require('./routes/uzdevumi');
 app.use('/uzdevumi', taskRoutes);
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 const PORT = 3000;

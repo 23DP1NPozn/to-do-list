@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Uzdevums = require('../models/uzdevums'); // Updated model import
+const Uzdevums = require('../uzdevums');
 
 // GET all uzdevumi
 router.get('/', async (req, res) => {
